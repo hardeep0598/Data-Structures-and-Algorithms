@@ -19,7 +19,8 @@ public class GenerateBinaryStrings {
     
     private static List<String> generateBinaryStringsIterative(int n) {
         List<String> result = new ArrayList<>();
-        for(int i=0; i<Math.pow(2, n); i++) {
+        int total = 1 << n;
+        for(int i = 0; i < total; i++) {
             String binary = Integer.toBinaryString(i);
             String padded = "0".repeat(n - binary.length()) + binary;
             result.add(padded);
